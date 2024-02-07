@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Botones con diferentes comportamientos</title>
+<title>San Valentin</title>
 <style>
 /* Estilos CSS para los elementos */
 body {
@@ -58,7 +58,7 @@ body {
     <img src="https://media1.tenor.com/m/O4tLAtipzkkAAAAC/cry-sad.gif" alt="GIF" id="gif">
 </div>
 
-<h1 id="titulo">Botones con diferentes comportamientos</h1>
+<h1 id="titulo">¿Quieres ser mi San Valentín Ximenita?</h1>
 
 <!-- Contenedor para los botones -->
 <div class="contenedor-botones">
@@ -80,19 +80,21 @@ botonSi.addEventListener("click", function() {
   // Cambiar el GIF
   document.getElementById("gif").src = "https://media1.tenor.com/m/bFcBEbfClHgAAAAC/lilo-and-stich.gif";
   // Cambiar el texto del título
-  titulo.textContent = "Ok";
-  // Ocultar los botones
+  titulo.innerHTML = "¡Excelente opción!<br>Te veo este 14 de Febrero del 2024<br>Lugar y hora por definir.<br>¡Te amo!";
+ // Ocultar los botones
   contenedorBotones.style.display = "none";
 });
 
 // Obtener el botón rojo
 var botonNo = document.getElementById("botonNo");
 var textosBotonNo = [
-  "Texto 1",
-  "Texto 2",
-  "Texto 3",
-  "Texto 4",
-  "Texto 5"
+  "¿Estás segura?",
+  "¿Segurísima?",
+  "Inténtalo otra vez",
+  "¿Prefieres pasar el día sin mí?",
+  "Me pondré triste",
+  "Piénsalo más",
+  "Puedo seguir insistiendo todo el dia"
 ];
 
 // Añadir un evento de clic al botón "No"
@@ -109,3 +111,4 @@ botonNo.addEventListener("click", function() {
 
 </body>
 </html>
+
