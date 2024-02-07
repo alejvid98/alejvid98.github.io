@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>San Valentin</title>
+<style>
+/* Estilos CSS para los elementos */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilos CSS para el GIF */
+.gif {
+    margin-top: 100px; /* Margen superior de 100 píxeles */
+}
+
+/* Estilos CSS para los botones */
+.contenedor-botones {
+    display: flex; /* Utilizar flexbox */
+    justify-content: space-between; /* Distribuir el espacio entre los elementos */
+    max-width: 300px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Centrar el contenedor horizontalmente */
+}
+
+.boton {
+    font-size: 16px; /* Tamaño inicial del botón */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    transition: font-size 0.2s; /* Transición suave del tamaño */
+    border: 2px solid #333; /* Borde sólido de 2 píxeles de ancho en color gris oscuro */
+    cursor: pointer; /* Cambio de cursor al pasar el ratón */
+    box-sizing: border-box; /* Incluir el padding en el tamaño total */
+}
+
+#botonSi {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Color de texto blanco */
+    height: auto; /* Altura ajustable */
+    margin-right: 5px; /* Margen a la derecha para separar los botones */
+}
+
+#botonNo {
+    background-color: #FF5733; /* Color de fondo rojo */
+    color: white; /* Color de texto blanco */
+    height: 40px; /* Altura fija */
+}
+</style>
+</head>
+<body>
+
+<!-- GIF en la parte superior de la página -->
+<div class="gif" id="gif-container">
+    <img src="https://media1.tenor.com/m/O4tLAtipzkkAAAAC/cry-sad.gif" alt="GIF" id="gif">
+</div>
+
+<h1 id="titulo">¿Quieres ser mi San Valentín Ximenita?</h1>
+
+<!-- Contenedor para los botones -->
+<div class="contenedor-botones">
+    <!-- Botón "Sí" con ID "botonSi" -->
+    <button id="botonSi" class="boton">Si</button>
+    <!-- Botón "No" con ID "botonNo" -->
+    <button id="botonNo" class="boton">No</button>
+</div>
+
+<script>
+// Obtener el botón verde y el contenedor del GIF
+var botonSi = document.getElementById("botonSi");
+var gifContainer = document.getElementById("gif-container");
+var titulo = document.getElementById("titulo");
+var contenedorBotones = document.querySelector(".contenedor-botones");
+
+// Añadir un evento de clic al botón verde
+botonSi.addEventListener("click", function() {
+  // Cambiar el GIF
+  document.getElementById("gif").src = "https://media1.tenor.com/m/bFcBEbfClHgAAAAC/lilo-and-stich.gif";
+  // Cambiar el texto del título
+  titulo.innerHTML = "¡Excelente opción!<br>Te veo este 14 de Febrero del 2024<br>Lugar y hora por definir.<br>";
+ // Ocultar los botones
+  contenedorBotones.style.display = "none";
+});
+
+// Obtener el botón rojo
+var botonNo = document.getElementById("botonNo");
+var textosBotonNo = [
+  "¿Estás segura?",
+  "¿Segurísima?",
+  "Inténtalo otra vez",
+  "¿Prefieres pasar el día sin mí?",
+  "Me pondré triste",
+  "Piénsalo más",
+  "Puedo seguir insistiendo todo el dia"
+];
+
+// Añadir un evento de clic al botón "No"
+botonNo.addEventListener("click", function() {
+  // Cambiar la posición aleatoriamente
+  botonNo.style.position = "absolute";
+  botonNo.style.left = Math.random() * (window.innerWidth - botonNo.offsetWidth) + "px";
+  botonNo.style.top = Math.random() * (window.innerHeight - botonNo.offsetHeight) + "px";
+  
+  // Obtener un texto aleatorio y mostrarlo
+  botonNo.textContent = textosBotonNo[Math.floor(Math.random() * textosBotonNo.length)];
+});
+</script>
+
+</body>
+</html>
